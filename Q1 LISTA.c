@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+
+void bubbleSort(int v[], int n) {
+    for(int i=0; i< n ;i++){
+        for(int j=0 ; j<n-1 ; j++){
+            if(v[j]>v[j+1]){
+                int temp= v[j+1];
+                v[j+1]= v[j];
+                v[j]= temp;
+            }
+        }
+    }
+}
+
+
+void imprimirVetor(int v[], int n) {
+    for(int i = 0; i < n; i++)
+        printf("%d ", v[i]);
+    printf("\n");
+}
+
+int main() {
+    int n=6;
+    int dados[]={10,2,7,8,1,6};
+    printf("VETOR ORIGINAL:\n");
+    imprimirVetor(dados,n);
+    bubbleSort(dados,n);
+    printf("VETOR ORDENADO:\n");
+    imprimirVetor(dados,n);
+
+
+    return 0;
+}
+
