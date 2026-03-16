@@ -1,0 +1,58 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+static void print_array(const int v[], int n) {
+    printf("[");
+    for (int i = 0; i < n; i++) {
+        printf("%d", v[i]);
+        if (i < n - 1) printf(", ");
+    }
+    printf("]");
+}
+
+static void swap_int(int *a, int *b) {
+    int tmp = *a;
+    *a = *b;
+    *b = tmp;
+}
+
+void selectionSort(int v[], int n) {
+if( !v || n<=1)
+return;
+int comparacoes=0;
+int trocas=0;
+
+for(int i=0; i<n-1;i++){
+   printf("\nVETOR ANTES: ");
+   print_array(v,n);
+    int idx=i ;
+for(int j=i ;j<n ;j++){
+    if(v[j] < v[idx]){
+    comparacoes++;
+    idx=j;
+        }
+}
+     if (idx!=i){
+         trocas++;
+       swap_int(&v[i],&v[idx]);
+}
+    printf(" || VETOR DEPOIS:");
+    print_array(v,n);
+
+}
+     printf("\ntrocas: %d comparacoes:%d\n",trocas,comparacoes);
+}
+
+int main() {
+
+    int dados[]  = {64 ,25 , 12, 22, 11};
+    int n = 5;
+    printf("VETOR ORIGINAL:\n");
+    print_array(dados,n);
+    selectionSort(dados,n);
+    printf("VETOR ORDENADO:\n");
+    print_array(dados,n);
+
+
+    return 0;
+}
