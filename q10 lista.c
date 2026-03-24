@@ -19,27 +19,22 @@ static void swap_int(int *a, int *b) {
 void selectionSort(int v[], int n, int ordem) {
 if( !v || n<=1)
 return;
-int comparacoes=0;
-int trocas=0;
 
 for(int i=0; i<n-1;i++){
     int idx=i ;
 for(int j=i ;j<n ;j++){
     if(ordem==1 && v[j] < v[idx]){
-    comparacoes++;
     idx=j;
         }
 
     if(ordem== -1 && v[j]> v[idx]){
-        comparacoes++;
         idx= j;
     }
 }
      if (idx!=i){
-         trocas++;
        swap_int(&v[i],&v[idx]);
 }
-}      printf("\ntrocas: %d comparacoes:%d\n",trocas,comparacoes);
+}      printf("\n");
 }
 
 int main(void) {
