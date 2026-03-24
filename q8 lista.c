@@ -24,13 +24,13 @@ int trocas=0;
 
 for(int i=0; i<n-1;i++){
     int idx=i ;
-for(int j=i ;j<n ;j++){
-    if(v[j] < v[idx]){
+for(int j=i+1 ;j<n ;j++){
     comparacoes++;
+    if(v[j] < v[idx]){
     idx=j;
-        }
 }
-     if (idx!=i){
+}
+if (idx!=i){
          trocas++;
        swap_int(&v[i],&v[idx]);
 }
@@ -62,6 +62,7 @@ int main() {
     printf("VETOR ORDENADO:\n");
     print_array(aleatorio,n);
 
+    printf("\n\n\nO selection sort tende a ser mais constante pois ele sempre vai ser O(n2) enquanto no caso do bubble se ele for otmizado ele pode variar entre pior caso(O(n2)) e o melhor caso(O(n))\n");
 
     return 0;
 }
