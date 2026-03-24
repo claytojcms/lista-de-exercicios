@@ -5,7 +5,6 @@ void imprimir_vetor(int V[],int n){
  for(int i = 0;i < n; i++)
     printf(" %d",V[i]);
     printf("\n");
-
  }
 
     void insertionSort(int V[], int n) {
@@ -21,11 +20,10 @@ while (j > 0 && chave < V[j - 1]) {
 
 }
     V[j] = chave;
-    printf("estado apos a iteracao:");
+    printf("I=%d ESTADO POS-ITERACAO:",i);
     imprimir_vetor(V,n);
 }
 }
-
 
 
     int main()
@@ -37,10 +35,8 @@ while (j > 0 && chave < V[j - 1]) {
         printf("VETOR A: Antes \n");
         imprimir_vetor(A,n);
         insertionSort(A,n);
-        printf("ESTADO FINAL:\n");
+        printf("ORDENADO:\n");
         imprimir_vetor(A,n);
-
-
 
         return 0;
     }
