@@ -40,16 +40,39 @@ void imprimirVetor(int v[], int n) {
 int main() {
     int n=6;
     int ordem;
-    int dados[]={10,2,7,8,1,6};
+    int repetidos[]={10,6,7,10,1,6};
+    int mistura[]={10,-2,7,8,1,-6};
+    int vetor_unico[1]={5};
+    int vetor_vazio[]={};
+
     printf("qual a ordem que voce quer:\n1-crescente\n-1-decrescente\n");
     scanf("%d",&ordem);
-    printf("VETOR ORIGINAL:\n");
-    imprimirVetor(dados,n);
-    bubbleSort_otimizado(dados,n,ordem);
+
+      printf("\nVETOR ORIGINAL REPETIDOS:\n");
+    imprimirVetor(repetidos,n);
+    bubbleSort_otimizado(repetidos,n,ordem);
     printf("VETOR ORDENADO:\n");
-    imprimirVetor(dados,n);
+    imprimirVetor(repetidos,n);
+
+    printf("\nVETOR ORIGINAL MISTURA:\n");
+    imprimirVetor(mistura,n);
+    bubbleSort_otimizado(mistura,n,ordem);
+    printf("VETOR ORDENADO:\n");
+    imprimirVetor(mistura,n);
+
+     printf("\nVETOR ORIGINAL UNICO:\n");
+    imprimirVetor(vetor_unico,1);
+    bubbleSort_otimizado(vetor_unico,1,ordem);
+    printf("VETOR ORDENADO:\n");
+    imprimirVetor(vetor_unico,1);
+
+     printf("\nVETOR ORIGINAL VAZIO:\n");
+    imprimirVetor(vetor_vazio,0);
+    bubbleSort_otimizado(vetor_vazio,0,ordem);
+    printf("VETOR ORDENADO:\n");
+    imprimirVetor(vetor_vazio,0);
+
 
 
     return 0;
 }
-
