@@ -17,7 +17,7 @@ void bubbleSort_otimizado(int v[], int n) {
                 houvetroca=1;
             }
         }
-        if(houvetroca==0)
+        if(houvetroca==0) //essa condição faz com que se ele rodar o vetor e não for necessario nenhuma troca ele para, ou seja se no melhor caso(o vetor ja está ordenado) ele roda o vetor uma unica vez(ou seja O(n)) e para o algoritmo e não roda o vetor mais vezes desnecessariamente.
             break;
     }
      printf("Otimizado:\n Trocas=%d  comparacoes:%d\n",trocas,comparacoes);
