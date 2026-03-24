@@ -6,7 +6,7 @@ void bubbleSort(int v[], int n) {
    int comparacoes=0;
    int trocas =0;
     for(int i=0; i< n ;i++){
-        for(int j=0 ; j<n-1 ; j++){
+        for(int j=0 ; j<n-i-1 ; j++){
             comparacoes++;
             if(v[j]>v[j+1]){
                 int temp= v[j+1];
